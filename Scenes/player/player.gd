@@ -1,6 +1,7 @@
 extends Node2D
 @export var MultiplayerSync:MultiplayerSynchronizer
 @export var PlayerNameLabel:Label
+var chosen_character:String
 
 const SPEED: int = 8
 # Called when the node enters the scene tree for the first time.
@@ -34,5 +35,22 @@ func _unhandled_input(event):
 		if Input.is_action_pressed("ui_up"):
 			global_position.y -= SPEED
 		if Input.is_action_just_pressed("ui_accept"):
+			print("Client has chosen " + chosen_character)
+			Client.send_chosen_character_to_server(chosen_character)
 			modulate = Color(randf_range(0.0,2.0),randf_range(0.0,2.0),randf_range(0.0,2.0))
 		get_viewport().set_input_as_handled()
+
+
+func _on_area_2d_area_entered(area:Area2D):
+	if is_multiplayer_authority():
+		var character_portrait: CharacterPortrait = area.get_parent() as CharacterPortrait
+		chosen_character = character_portrait.character_name
+		#print(character_portrait.character_name)
+		pass # Replace with function body.
+
+
+func _on_area_2d_area_exited(area:Area2D):
+	if is_multiplayer_authority():
+		chosen_character = ""
+		pass # Replace with function body.
+

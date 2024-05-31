@@ -31,6 +31,8 @@ func send_player_data_to_server(Name):
 func let_server_know_client_has_ready_uped():
 	Server.client_has_ready_uped.rpc_id(1,multiplayer.get_unique_id())
 
+func send_chosen_character_to_server(character_name):
+	Server.client_has_chosen_character.rpc_id(1,multiplayer.get_unique_id(),character_name)
 
 @rpc("authority","call_remote","reliable")
 func ready_up_acknowledged(player_id):
@@ -57,7 +59,7 @@ func player_has_disconnected(player_id):
 func start_game():
 	var scene:PackedScene = load("res://scenes/main/main.tscn") as PackedScene
 	get_tree().change_scene_to_packed(scene)
-	
+
 
 #only called on client when a peer has successfully established a connection to the server
 func _on_connected_to_server():

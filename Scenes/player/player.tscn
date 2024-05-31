@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://doaafyc0gom0t"]
 
-[ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_0juk0"]
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_0juk0"]
 [ext_resource type="Texture2D" uid="uid://bncbenqukjhus" path="res://Textures/Pointer/hand_point.png" id="2_btole"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tovca"]
@@ -37,3 +37,6 @@ scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_e502k")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

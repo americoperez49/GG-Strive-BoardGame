@@ -1,12 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwdojfn2qv2ax"]
+[gd_scene load_steps=9 format=3 uid="uid://bwdojfn2qv2ax"]
 
-[ext_resource type="PackedScene" uid="uid://doaafyc0gom0t" path="res://Scenes/player/player.tscn" id="1_3nvpg"]
-[ext_resource type="Script" path="res://Scenes/main/main.gd" id="1_uxeuo"]
+[ext_resource type="PackedScene" uid="uid://doaafyc0gom0t" path="res://Scenes/Player/player.tscn" id="1_3nvpg"]
+[ext_resource type="Script" path="res://Scenes/Main/main.gd" id="1_uxeuo"]
+[ext_resource type="Script" path="res://Scenes/CharacterPortrait/character_portrait.gd" id="3_kpoft"]
+[ext_resource type="PackedScene" uid="uid://ctbt4gkm8c7nc" path="res://Scenes/CharacterPortrait/character_portrait.tscn" id="3_m4dxu"]
 
-[node name="main" type="Node2D" node_paths=PackedStringArray("SpawnLocations")]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_73eus"]
+load_path = "res://.godot/imported/Ky Kiske - Front.jpg-19792a6fb5c1a7b17f07f71c751f2a46.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6rq3"]
+atlas = SubResource("CompressedTexture2D_73eus")
+region = Rect2(0, 0, 750, 730)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ecvgp"]
+load_path = "res://.godot/imported/Anji Meto - Front.jpg-981819a612967ac7cf90ba34075363b6.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6thm"]
+atlas = SubResource("CompressedTexture2D_ecvgp")
+region = Rect2(0, 0, 750, 730)
+
+[node name="main" type="Node2D" node_paths=PackedStringArray("spawn_locations")]
 script = ExtResource("1_uxeuo")
-PlayerScene = ExtResource("1_3nvpg")
-SpawnLocations = NodePath("SpawnLocations")
+player_scene = ExtResource("1_3nvpg")
+spawn_locations = NodePath("SpawnLocations")
 
 [node name="SpawnLocations" type="Node2D" parent="."]
 
@@ -15,3 +31,45 @@ position = Vector2(143, 411)
 
 [node name="1" type="Node2D" parent="SpawnLocations"]
 position = Vector2(968, 416)
+
+[node name="CharacterPortrait" parent="." instance=ExtResource("3_m4dxu")]
+position = Vector2(278, 301)
+character_name = "Sol Badguy"
+
+[node name="CharacterPortrait2" type="Node2D" parent="."]
+position = Vector2(348, 301)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_kpoft")
+character_name = "Ky Kiske"
+
+[node name="Polygon2D" type="Polygon2D" parent="CharacterPortrait2"]
+clip_children = 2
+polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterPortrait2/Polygon2D"]
+position = Vector2(61, 31)
+texture = SubResource("AtlasTexture_i6rq3")
+
+[node name="Area2D" type="Area2D" parent="CharacterPortrait2"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortrait2/Area2D"]
+polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
+
+[node name="CharacterPortrait3" type="Node2D" parent="."]
+position = Vector2(418, 301)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_kpoft")
+character_name = "Anji Mito"
+
+[node name="Polygon2D" type="Polygon2D" parent="CharacterPortrait3"]
+clip_children = 2
+polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterPortrait3/Polygon2D"]
+position = Vector2(61, 31)
+texture = SubResource("AtlasTexture_c6thm")
+
+[node name="Area2D" type="Area2D" parent="CharacterPortrait3"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortrait3/Area2D"]
+polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
