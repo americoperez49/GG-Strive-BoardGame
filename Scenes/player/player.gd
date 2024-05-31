@@ -45,12 +45,5 @@ func _on_area_2d_area_entered(area:Area2D):
 	if is_multiplayer_authority():
 		var character_portrait: CharacterPortrait = area.get_parent() as CharacterPortrait
 		chosen_character = character_portrait.character_name
-		#print(character_portrait.character_name)
-		pass # Replace with function body.
-
-
-func _on_area_2d_area_exited(area:Area2D):
-	if is_multiplayer_authority():
-		chosen_character = ""
-		pass # Replace with function body.
+		print(str(multiplayer.get_unique_id()) +":"+ chosen_character)
 
