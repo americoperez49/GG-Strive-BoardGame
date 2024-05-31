@@ -4,7 +4,9 @@ signal client_has_connected_to_server
 signal all_players_have_connected_to_server
 signal player_has_disconnected_from_server
 signal player_ready_status_has_changed
+signal all_players_have_loaded_character_select_screen
 var peer:ENetMultiplayerPeer
+var scene:PackedScene = preload("res://scenes/main/main.tscn") as PackedScene
 
 
 
@@ -34,6 +36,14 @@ func let_server_know_client_has_ready_uped():
 func send_chosen_character_to_server(character_name):
 	Server.client_has_chosen_character.rpc_id(1,multiplayer.get_unique_id(),character_name)
 
+func tell_server_that_client_has_loaded_character_select_screen():
+	print("Player " + str(multiplayer.get_unique_id()) + " is letting server know that they ahve loaded character select screen")
+	Server.client_has_loaded_character_select_screen.rpc_id(1,multiplayer.get_unique_id())
+
+@rpc("authority","call_local","reliable")
+func all_clients_have_loaded_character_select_screen():
+	all_players_have_loaded_character_select_screen.emit()
+
 @rpc("authority","call_remote","reliable")
 func ready_up_acknowledged(player_id):
 	GameManager.Players[player_id].Ready = "Ready"
@@ -57,7 +67,6 @@ func player_has_disconnected(player_id):
 #anyone (client or server) can call this function and it will run both locally for the peer who called it and remotely for all other peers
 @rpc("authority","call_local","reliable")		
 func start_game():
-	var scene:PackedScene = load("res://scenes/main/main.tscn") as PackedScene
 	get_tree().change_scene_to_packed(scene)
 
 

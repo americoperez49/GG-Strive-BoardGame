@@ -2,9 +2,9 @@ extends Node
 
 var IP_ADDRESS = "localhost"
 var PORT = 8910
-var current_player=1
 const MAX_NUMBER_OF_PLAYERS = 2
 var peer:ENetMultiplayerPeer
+var number_of_players_that_have_loaded_character_select_screen: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,9 +44,7 @@ func gather_player_data(ID,Name):
 			"Name":Name,
 			"Ready":"Not Ready",
 			"Added_To_Scene":false,
-			"Player_Number":current_player
 		}
-		current_player+=1
 		
 	if _two_players_have_connected():
 		print("Letting clients know that two players have connected and that they can show the ready list and enable the ready button")
@@ -74,6 +72,14 @@ func client_has_ready_uped(player_id):
 @rpc("any_peer","call_remote","reliable")
 func client_has_chosen_character(player_id,chosen_character_name):
 	print("Player: " + str(player_id) + " has chosen " + chosen_character_name)
+	pass
+
+@rpc("any_peer","call_remote","reliable")
+func client_has_loaded_character_select_screen(player_id):
+	print("server has received message from client, letting server know what client has loaded character selelect screen")
+	number_of_players_that_have_loaded_character_select_screen +=1
+	if number_of_players_that_have_loaded_character_select_screen == 2:
+		Client.all_clients_have_loaded_character_select_screen.rpc()
 	pass
 
 func _on_peer_disconnected(player_id:int):
