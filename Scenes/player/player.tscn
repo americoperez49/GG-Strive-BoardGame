@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://doaafyc0gom0t"]
+
+[ext_resource type="Script" path="res://Scenes/player/player.gd" id="1_0juk0"]
+[ext_resource type="Texture2D" uid="uid://bncbenqukjhus" path="res://Textures/Pointer/hand_point.png" id="2_btole"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tovca"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:modulate")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e502k"]
+
+[node name="Player" type="Node2D" node_paths=PackedStringArray("MultiplayerSync", "PlayerNameLabel")]
+script = ExtResource("1_0juk0")
+MultiplayerSync = NodePath("MultiplayerSynchronizer")
+PlayerNameLabel = NodePath("player_name_label")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_btole")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_tovca")
+
+[node name="player_name_label" type="Label" parent="."]
+offset_left = -22.0
+offset_top = -94.0
+offset_right = 18.0
+offset_bottom = -71.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-14, -19)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_e502k")
