@@ -1,6 +1,6 @@
 extends Node2D
-@export var PlayerScene:PackedScene
-@export var SpawnLocations:Node2D
+@export var player_scene:PackedScene
+@export var spawn_locations:Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,13 +11,13 @@ func _ready():
 	for i in GameManager.Players:
 		
 		# we instantiate a player object
-		var currentPlayer:Node2D = PlayerScene.instantiate() as Node2D
+		var currentPlayer:Node2D = player_scene.instantiate() as Node2D
 		
 		# we add it to the scene, making sure the node has a readable name
 		add_child(currentPlayer,true)
 		
 		# we iterate through each spawn point
-		for spawn:Node2D in SpawnLocations.get_children():
+		for spawn:Node2D in spawn_locations.get_children():
 			
 			# if the spawn points name is the same as our current index
 			if spawn.name == str(index):

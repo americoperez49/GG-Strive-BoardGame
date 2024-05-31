@@ -2,7 +2,8 @@ extends Node
 
 var IP_ADDRESS = "localhost"
 var PORT = 8910
-var MAX_NUMBER_OF_PLAYERS = 2
+var current_player=1
+const MAX_NUMBER_OF_PLAYERS = 2
 var peer:ENetMultiplayerPeer
 
 # Called when the node enters the scene tree for the first time.
@@ -42,8 +43,10 @@ func gather_player_data(ID,Name):
 			"ID":ID,
 			"Name":Name,
 			"Ready":"Not Ready",
-			"Added_To_Scene":false
+			"Added_To_Scene":false,
+			"Player_Number":current_player
 		}
+		current_player+=1
 		
 	if _two_players_have_connected():
 		print("Letting clients know that two players have connected and that they can show the ready list and enable the ready button")
@@ -66,6 +69,11 @@ func client_has_ready_uped(player_id):
 	if all_players_are_ready:
 		print("Server is starting the game")
 		Client.start_game.rpc()
+	pass
+
+@rpc("any_peer","call_remote","reliable")
+func client_has_chosen_character(player_id,chosen_character_name):
+	print("Player: " + str(player_id) + " has chosen " + chosen_character_name)
 	pass
 
 func _on_peer_disconnected(player_id:int):

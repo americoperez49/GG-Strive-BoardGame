@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dumtcsq180dug"
-path="res://.godot/imported/Anji Meto - Front.jpg-981819a612967ac7cf90ba34075363b6.ctex"
+uid="uid://0ia4pmhltiyf"
+path="res://.godot/imported/Anji Mito - Back.jpg-2d319ed97c5ed80871499a3d3f6af73a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Anji Meto/Anji Meto - Front.jpg"
-dest_files=["res://.godot/imported/Anji Meto - Front.jpg-981819a612967ac7cf90ba34075363b6.ctex"]
+source_file="res://Textures/Anji Mito/Anji Mito - Back.jpg"
+dest_files=["res://.godot/imported/Anji Mito - Back.jpg-2d319ed97c5ed80871499a3d3f6af73a.ctex"]
 
 [params]
 
