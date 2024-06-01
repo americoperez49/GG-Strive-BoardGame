@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbi07so57al4k"]
+
+[ext_resource type="Texture2D" uid="uid://dq44wcblvn0n8" path="res://Textures/Sol Badguy/Sol Badguy.png" id="1_ph68i"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ph68i")

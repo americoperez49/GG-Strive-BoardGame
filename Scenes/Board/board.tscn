@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhi432ry75i2y"]
+
+[ext_resource type="Texture2D" uid="uid://3gbr1t0ondjn" path="res://Textures/Misc/Terrain.jpg" id="1_ocakl"]
+[ext_resource type="Script" path="res://Scenes/Board/board.gd" id="1_ossd2"]
+[ext_resource type="Texture2D" uid="uid://cwjtq74au21yn" path="res://Textures/Misc/Board.png" id="2_u8yq1"]
+[ext_resource type="PackedScene" uid="uid://bbi07so57al4k" path="res://Scenes/CharacterSprite/character_sprite.tscn" id="3_gs6hp"]
+
+[node name="Board" type="Node2D" node_paths=PackedStringArray("player_1_sprite", "player_2_sprite", "characters")]
+script = ExtResource("1_ossd2")
+player_1_sprite = NodePath("Characters/0")
+player_2_sprite = NodePath("Characters/1")
+characters = NodePath("Characters")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(957.5, 537)
+scale = Vector2(1.02634, 0.578495)
+texture = ExtResource("1_ocakl")
+
+[node name="BoardBG" type="Sprite2D" parent="."]
+position = Vector2(967, 524)
+scale = Vector2(0.200619, 0.200619)
+texture = ExtResource("2_u8yq1")
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="0" parent="Characters" instance=ExtResource("3_gs6hp")]
+position = Vector2(657, 450)
+
+[node name="1" parent="Characters" instance=ExtResource("3_gs6hp")]
+position = Vector2(1279, 450)

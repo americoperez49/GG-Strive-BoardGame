@@ -4,7 +4,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Client.tell_server_that_client_has_loaded_character_select_screen()
+	if !multiplayer.is_server():
+		Client.tell_server_that_client_has_loaded_character_select_screen()
 	await Client.all_players_have_loaded_character_select_screen
 	# index used to determine what spawn point a player will spawn on
 	var index = 0

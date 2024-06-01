@@ -36,8 +36,9 @@ func _unhandled_input(event):
 			global_position.y -= SPEED
 		if Input.is_action_just_pressed("ui_accept"):
 			print("Client has chosen " + chosen_character)
-			Client.send_chosen_character_to_server(chosen_character)
-			modulate = Color(randf_range(0.0,2.0),randf_range(0.0,2.0),randf_range(0.0,2.0))
+			if chosen_character != "":
+				Client.send_chosen_character_to_server(chosen_character)
+				queue_free()
 		get_viewport().set_input_as_handled()
 
 

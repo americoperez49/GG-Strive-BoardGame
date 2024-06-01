@@ -4,7 +4,9 @@ var IP_ADDRESS = "localhost"
 var PORT = 8910
 const MAX_NUMBER_OF_PLAYERS = 2
 var peer:ENetMultiplayerPeer
+var number_of_players_that_have_connected_to_server:int = 0
 var number_of_players_that_have_loaded_character_select_screen: int = 0
+var number_of_players_that_have_selected_a_character: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,6 +38,7 @@ func _two_players_have_connected():
 
 @rpc("any_peer","reliable")
 func gather_player_data(ID,Name):
+	number_of_players_that_have_connected_to_server +=1
 	print("Client: " + str(ID) + " has connected to server")
 		#if the peer's list of players doesnt contain the player we just receieved data for, then add them to the list
 	if !GameManager.Players.has(ID):
@@ -44,6 +47,8 @@ func gather_player_data(ID,Name):
 			"Name":Name,
 			"Ready":"Not Ready",
 			"Added_To_Scene":false,
+			"Character":"",
+			"Player_Number":number_of_players_that_have_connected_to_server
 		}
 		
 	if _two_players_have_connected():
@@ -66,12 +71,17 @@ func client_has_ready_uped(player_id):
 	#start the game if all players are ready
 	if all_players_are_ready:
 		print("Server is starting the game")
-		Client.start_game.rpc()
+		Client.start_character_selection.rpc()
 	pass
 
 @rpc("any_peer","call_remote","reliable")
 func client_has_chosen_character(player_id,chosen_character_name):
+	number_of_players_that_have_selected_a_character += 1
 	print("Player: " + str(player_id) + " has chosen " + chosen_character_name)
+	GameManager.Players[player_id].Character = chosen_character_name
+	
+	if number_of_players_that_have_selected_a_character == 2:
+		Client.start_game.rpc(GameManager.Players)
 	pass
 
 @rpc("any_peer","call_remote","reliable")

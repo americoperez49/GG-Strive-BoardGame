@@ -6,9 +6,8 @@ signal player_has_disconnected_from_server
 signal player_ready_status_has_changed
 signal all_players_have_loaded_character_select_screen
 var peer:ENetMultiplayerPeer
-var scene:PackedScene = preload("res://scenes/main/main.tscn") as PackedScene
-
-
+var character_select_screen:PackedScene = preload("res://Scenes/CharacterSelect/character_select.tscn") as PackedScene
+var board_game:PackedScene = preload("res://Scenes/Board/board.tscn") as PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,7 +36,7 @@ func send_chosen_character_to_server(character_name):
 	Server.client_has_chosen_character.rpc_id(1,multiplayer.get_unique_id(),character_name)
 
 func tell_server_that_client_has_loaded_character_select_screen():
-	print("Player " + str(multiplayer.get_unique_id()) + " is letting server know that they ahve loaded character select screen")
+	print("Player " + str(multiplayer.get_unique_id()) + " is letting server know that they have loaded character select screen")
 	Server.client_has_loaded_character_select_screen.rpc_id(1,multiplayer.get_unique_id())
 
 @rpc("authority","call_local","reliable")
@@ -66,10 +65,14 @@ func player_has_disconnected(player_id):
 	
 #anyone (client or server) can call this function and it will run both locally for the peer who called it and remotely for all other peers
 @rpc("authority","call_local","reliable")		
-func start_game():
-	get_tree().change_scene_to_packed(scene)
+func start_character_selection():
+	get_tree().change_scene_to_packed(character_select_screen)
 
-
+@rpc("authority","call_local","reliable")
+func start_game(players):
+	GameManager.Players = players
+	get_tree().change_scene_to_packed(board_game)
+	
 #only called on client when a peer has successfully established a connection to the server
 func _on_connected_to_server():
 	Utils._who_created_this_message(peer)
