@@ -46,7 +46,6 @@ func gather_player_data(ID,Name):
 			"ID":ID,
 			"Name":Name,
 			"Ready":"Not Ready",
-			"Added_To_Scene":false,
 			"Character":"",
 			"Player_Number":number_of_players_that_have_connected_to_server
 		}
@@ -81,6 +80,9 @@ func client_has_chosen_character(player_id,chosen_character_name):
 	GameManager.Players[player_id].Character = chosen_character_name
 	
 	if number_of_players_that_have_selected_a_character == 2:
+		GameManager.decide_who_goes_first()
+		GameManager.setup_inital_hands()
+		#send data to each player, making sure to only send
 		Client.start_game.rpc(GameManager.Players)
 	pass
 
