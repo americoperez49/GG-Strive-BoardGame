@@ -1,491 +1,493 @@
-[gd_scene load_steps=44 format=3 uid="uid://bwdojfn2qv2ax"]
+[gd_scene load_steps=25 format=3 uid="uid://bwdojfn2qv2ax"]
 
-[ext_resource type="PackedScene" uid="uid://doaafyc0gom0t" path="res://Scenes/player/player.tscn" id="1_3nvpg"]
+[ext_resource type="PackedScene" uid="uid://doaafyc0gom0t" path="res://Scenes/Player/player.tscn" id="1_3nvpg"]
 [ext_resource type="Script" path="res://Scenes/CharacterSelect/character_select.gd" id="1_j1nvg"]
-[ext_resource type="Script" path="res://Scenes/CharacterPortrait/character_portrait.gd" id="3_kpoft"]
-[ext_resource type="Texture2D" uid="uid://dumtcsq180dug" path="res://Textures/Anji Mito/Anji Mito - Front.jpg" id="4_grfde"]
-[ext_resource type="Texture2D" uid="uid://cpv6qcadewxsk" path="res://Textures/Axl Low/Axl Low - Front.jpg" id="5_t08e4"]
-[ext_resource type="Texture2D" uid="uid://bvg13fn4db0er" path="res://Textures/Baiken/Baiken - Front.jpg" id="6_7cqx8"]
-[ext_resource type="Texture2D" uid="uid://dqaawepjejanf" path="res://Textures/Chip Zanuff/Chip Zanuff - Front.jpg" id="7_crlpo"]
-[ext_resource type="Texture2D" uid="uid://b2us57f5w1tkl" path="res://Textures/Faust/Faust - Front.jpg" id="8_16f2b"]
-[ext_resource type="Texture2D" uid="uid://co00vqdxheqfb" path="res://Textures/Giovanna/Giovanna - Front.jpg" id="9_3gps3"]
-[ext_resource type="Texture2D" uid="uid://dnjeqeuesdpn3" path="res://Textures/Goldlewis/Goldlewis - Front.jpg" id="10_gnhsq"]
-[ext_resource type="Texture2D" uid="uid://cdoic53uluyg0" path="res://Textures/I-No/I-No - Front.jpg" id="11_oiuu8"]
-[ext_resource type="Texture2D" uid="uid://bay645yjyv43n" path="res://Textures/Happy Chaos/Happy Chaos - Front.jpg" id="11_s3jk8"]
-[ext_resource type="Texture2D" uid="uid://dx8bx08glk6s6" path="res://Textures/Jack-O/Jack-O - Front.jpg" id="12_r26y2"]
-[ext_resource type="Texture2D" uid="uid://ct2kh66sa2wnh" path="res://Textures/Leo Whitefang/Leo Whitefang - Front.jpg" id="13_xgbpm"]
-[ext_resource type="Texture2D" uid="uid://yug2oa7xfsf0" path="res://Textures/May/May - Front.jpg" id="14_78a1r"]
-[ext_resource type="Texture2D" uid="uid://d37s6vpeuxm1g" path="res://Textures/Millia Rage/Millia Rage - Front.jpg" id="15_724es"]
-[ext_resource type="Texture2D" uid="uid://jvrjkywvwfyq" path="res://Textures/Nagoriyuki/Nagoriyuki - Front.jpg" id="16_trmhp"]
-[ext_resource type="Texture2D" uid="uid://dr47p40hubgqd" path="res://Textures/Potemkin/Potemkin - Front.jpg" id="17_vse8x"]
-[ext_resource type="Texture2D" uid="uid://duu8krnqcvbff" path="res://Textures/Ramlethal Valentine/Ramlethal Valentine - Front.jpg" id="18_3sqp5"]
-[ext_resource type="Texture2D" uid="uid://c4ulcbhstthvp" path="res://Textures/Testament/Testament - Front.jpg" id="19_6moce"]
-[ext_resource type="Texture2D" uid="uid://l5had02m4orh" path="res://Textures/Zato-1/Zato-1 Front.jpg" id="20_gygkn"]
+[ext_resource type="Script" path="res://Scenes/CharacterPortrait/character_portrait.gd" id="3_5qh31"]
+[ext_resource type="Texture2D" uid="uid://jvkkqpihlauh" path="res://Textures/character-portraits.jpg" id="4_lbnrp"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p0fqn"]
-load_path = "res://.godot/imported/Sol Badguy-Front.jpg-cfac5602fabd50a32c8586406f865cc6.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l8vr5"]
-atlas = SubResource("CompressedTexture2D_p0fqn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nqcw"]
+atlas = ExtResource("4_lbnrp")
 region = Rect2(0, 0, 750, 730)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_73eus"]
-load_path = "res://.godot/imported/Ky Kiske - Front.jpg-19792a6fb5c1a7b17f07f71c751f2a46.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1qwp"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(750, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i6rq3"]
-atlas = SubResource("CompressedTexture2D_73eus")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2vbu"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(1500, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c6thm"]
-atlas = ExtResource("4_grfde")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d156m"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(2250, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e7pau"]
-atlas = ExtResource("5_t08e4")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sofut"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(3000, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lsdjm"]
-atlas = ExtResource("6_7cqx8")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydwp5"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(3750, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bhat3"]
-atlas = ExtResource("7_crlpo")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_g280f"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(4500, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ubj8u"]
-atlas = ExtResource("8_16f2b")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6coo"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(5250, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x4bel"]
-atlas = ExtResource("9_3gps3")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y8v5"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(6000, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_16cr3"]
-atlas = ExtResource("10_gnhsq")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lptv"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(6750, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0nb34"]
-atlas = ExtResource("11_s3jk8")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3ddu"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(7500, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5cmrv"]
-atlas = ExtResource("11_oiuu8")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3xgs"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(8250, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hfte4"]
-atlas = ExtResource("12_r26y2")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p0j8"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(9000, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3lr03"]
-atlas = ExtResource("13_xgbpm")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl7hy"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(9750, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m8gv8"]
-atlas = ExtResource("14_78a1r")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqqqd"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(10500, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5phpm"]
-atlas = ExtResource("15_724es")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fahe5"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(11250, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6rsd2"]
-atlas = ExtResource("16_trmhp")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_452bf"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(12000, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f2d6t"]
-atlas = ExtResource("17_vse8x")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_614eh"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(12750, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_an7ku"]
-atlas = ExtResource("18_3sqp5")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyp8d"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(13500, 0, 750, 730)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ligo8"]
-atlas = ExtResource("19_6moce")
-region = Rect2(0, 0, 750, 730)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bxjfw"]
-atlas = ExtResource("20_gygkn")
-region = Rect2(0, 0, 750, 730)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kfqn"]
+atlas = ExtResource("4_lbnrp")
+region = Rect2(14250, 0, 750, 730)
 
 [node name="CharacterSelectScreen" type="Node2D" node_paths=PackedStringArray("spawn_locations")]
 script = ExtResource("1_j1nvg")
 player_scene = ExtResource("1_3nvpg")
-spawn_locations = NodePath("SpawnLocations")
+spawn_locations = NodePath("Node2D/SpawnLocations")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-23.1287, -10)
-scale = Vector2(1.08515, 1)
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(1.59, 1.59)
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D"]
+position = Vector2(-23.1287, 0)
+scale = Vector2(1.134, 1.045)
 color = Color(0.237539, 0.237539, 0.237539, 1)
 polygon = PackedVector2Array(25, 176, 1082, 176, 1082, 311.377, 1082, 452, 553.293, 452, 25, 452, 25, 311.93)
 
-[node name="SpawnLocations" type="Node2D" parent="."]
+[node name="SpawnLocations" type="Node2D" parent="Node2D"]
+position = Vector2(9, 15)
 
-[node name="0" type="Node2D" parent="SpawnLocations"]
-position = Vector2(151, 257)
+[node name="0" type="Node2D" parent="Node2D/SpawnLocations"]
+position = Vector2(59, 230)
 
-[node name="1" type="Node2D" parent="SpawnLocations"]
-position = Vector2(967, 376)
+[node name="1" type="Node2D" parent="Node2D/SpawnLocations"]
+position = Vector2(1130, 403)
 
-[node name="CharacterPortraitContainer" type="Node2D" parent="."]
-position = Vector2(214, 278)
+[node name="CharacterPortraits" type="Node2D" parent="Node2D"]
+position = Vector2(129, 288)
+scale = Vector2(1.32, 1.32)
+
+[node name="Anji Mito" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(7.62338, 0)
 scale = Vector2(0.3, 0.3)
-
-[node name="Sol Badguy" type="Node2D" parent="CharacterPortraitContainer"]
-script = ExtResource("3_kpoft")
-character_name = "Sol Badguy"
-
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Sol Badguy"]
-clip_children = 2
-polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Sol Badguy/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_l8vr5")
-
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Sol Badguy"]
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Sol Badguy/Area2D"]
-polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
-
-[node name="Ky Kiske" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(250, 0)
-script = ExtResource("3_kpoft")
-character_name = "Ky Kiske"
-
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Ky Kiske"]
-clip_children = 2
-polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Ky Kiske/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_i6rq3")
-
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Ky Kiske"]
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Ky Kiske/Area2D"]
-polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
-
-[node name="Anji Mito" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(500, 0)
-script = ExtResource("3_kpoft")
+script = ExtResource("3_5qh31")
 character_name = "Anji Mito"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Anji Mito"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Anji Mito"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Anji Mito/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_c6thm")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Anji Mito/Polygon2D"]
+position = Vector2(77.6667, 14.3333)
+texture = SubResource("AtlasTexture_1nqcw")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Anji Mito"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Anji Mito"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Anji Mito/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Anji Mito/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Axl Low" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(750, 0)
-script = ExtResource("3_kpoft")
+[node name="Axl Low" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(82.6234, 0)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Axl Low"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Axl Low"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Axl Low"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Axl Low/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_e7pau")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Axl Low/Polygon2D"]
+position = Vector2(90.0001, 86.6666)
+texture = SubResource("AtlasTexture_q1qwp")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Axl Low"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Axl Low"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Axl Low/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Axl Low/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Baiken" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(1000, 0)
-script = ExtResource("3_kpoft")
+[node name="Baiken" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(157.623, 0)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Baiken"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Baiken"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Baiken"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Baiken/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_lsdjm")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Baiken/Polygon2D"]
+position = Vector2(90.0001, 86.6666)
+texture = SubResource("AtlasTexture_s2vbu")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Baiken"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Baiken"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Baiken/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Baiken/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Chip Zanuff" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(1250, 0)
-script = ExtResource("3_kpoft")
+[node name="Chip Zanuff" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(232.623, 0)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Chip Zanuff"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Chip Zanuff"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Chip Zanuff"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Chip Zanuff/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_bhat3")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Chip Zanuff/Polygon2D"]
+position = Vector2(90.0001, 86.6666)
+texture = SubResource("AtlasTexture_d156m")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Chip Zanuff"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Chip Zanuff"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Chip Zanuff/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Chip Zanuff/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Faust" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(1500, 0)
-script = ExtResource("3_kpoft")
+[node name="Faust" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(307.623, 0)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Faust"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Faust"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Faust"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Faust/Polygon2D"]
-position = Vector2(-160, 30)
-texture = SubResource("AtlasTexture_ubj8u")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Faust/Polygon2D"]
+position = Vector2(-173.333, 86.6666)
+texture = SubResource("AtlasTexture_sofut")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Faust"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Faust"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Faust/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Faust/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Giovanna" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(1750, 0)
-script = ExtResource("3_kpoft")
+[node name="Giovanna" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(382.624, 0)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Giovanna"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Giovanna"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Giovanna"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Giovanna/Polygon2D"]
-position = Vector2(-16.6666, 30)
-texture = SubResource("AtlasTexture_x4bel")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Giovanna/Polygon2D"]
+position = Vector2(-29.9998, 16.6667)
+texture = SubResource("AtlasTexture_ydwp5")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Giovanna"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Giovanna"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Giovanna/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Giovanna/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Goldlewis" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(2000, 0)
-script = ExtResource("3_kpoft")
+[node name="Goldlewis" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(457.623, 0)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Goldlewis"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Goldlewis"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Goldlewis"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Goldlewis/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_16cr3")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Goldlewis/Polygon2D"]
+position = Vector2(66.6667, 86.6666)
+texture = SubResource("AtlasTexture_g280f")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Goldlewis"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Goldlewis"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Goldlewis/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Goldlewis/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Happy Chaos" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(2250, 0)
-script = ExtResource("3_kpoft")
+[node name="Happy Chaos" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(532.623, 0)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Happy Chaos"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Happy Chaos"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Happy Chaos"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Happy Chaos/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_0nb34")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Happy Chaos/Polygon2D"]
+position = Vector2(90.0001, 86.6666)
+texture = SubResource("AtlasTexture_o6coo")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Happy Chaos"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Happy Chaos"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Happy Chaos/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Happy Chaos/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="I-No" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(0, 356.667)
-script = ExtResource("3_kpoft")
+[node name="I-No" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(607.623, 0)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "I-No"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/I-No"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/I-No"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/I-No/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_5cmrv")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/I-No/Polygon2D"]
+position = Vector2(63.3333, 86.6666)
+texture = SubResource("AtlasTexture_8y8v5")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/I-No"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/I-No"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/I-No/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/I-No/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Jack-O" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(250, 356.667)
-script = ExtResource("3_kpoft")
+[node name="Jack-O" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(682.623, 0)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Jack-O"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Jack-O"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Jack-O"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Jack-O/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_hfte4")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Jack-O/Polygon2D"]
+position = Vector2(63.3333, 20)
+texture = SubResource("AtlasTexture_3lptv")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Jack-O"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Jack-O"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Jack-O/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Jack-O/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Leo Whitefang" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(500, 356.667)
-script = ExtResource("3_kpoft")
+[node name="Ky Kiske" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(7.62338, 109.091)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
+character_name = "Ky Kiske"
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Ky Kiske"]
+clip_children = 2
+polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Ky Kiske/Polygon2D"]
+position = Vector2(77.6667, 93.744)
+texture = SubResource("AtlasTexture_a3ddu")
+
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Ky Kiske"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Ky Kiske/Area2D"]
+polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
+
+[node name="Leo Whitefang" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(82.6234, 109.091)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Leo Whitefang"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Leo Whitefang"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Leo Whitefang"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Leo Whitefang/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_3lr03")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Leo Whitefang/Polygon2D"]
+position = Vector2(56.6476, 35.844)
+texture = SubResource("AtlasTexture_j3xgs")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Leo Whitefang"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Leo Whitefang"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Leo Whitefang/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Leo Whitefang/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="May" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(750, 356.667)
-script = ExtResource("3_kpoft")
+[node name="May" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(157.623, 109.091)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "May"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/May"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/May"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/May/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_m8gv8")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/May/Polygon2D"]
+position = Vector2(68.4041, 57.3661)
+texture = SubResource("AtlasTexture_5p0j8")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/May"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/May"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/May/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/May/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Millia Rage" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(1000, 356.667)
-script = ExtResource("3_kpoft")
+[node name="Millia Rage" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(232.623, 109.091)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Millia Rage"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Millia Rage"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Millia Rage"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Millia Rage/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_5phpm")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Millia Rage/Polygon2D"]
+position = Vector2(58.2234, 54.1897)
+texture = SubResource("AtlasTexture_yl7hy")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Millia Rage"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Millia Rage"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Millia Rage/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Millia Rage/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Nagoriyuki" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(1250, 356.667)
-script = ExtResource("3_kpoft")
+[node name="Nagoriyuki" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(307.623, 109.091)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Nagoriyuki"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Nagoriyuki"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Nagoriyuki"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Nagoriyuki/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_6rsd2")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Nagoriyuki/Polygon2D"]
+position = Vector2(78.219, 68.4836)
+texture = SubResource("AtlasTexture_mqqqd")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Nagoriyuki"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Nagoriyuki"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Nagoriyuki/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Nagoriyuki/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Potemkin" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(1500, 356.667)
-script = ExtResource("3_kpoft")
+[node name="Potemkin" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(382.624, 109.091)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Potemkin"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Potemkin"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Potemkin"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Potemkin/Polygon2D"]
-position = Vector2(70.0001, 30)
-texture = SubResource("AtlasTexture_f2d6t")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Potemkin/Polygon2D"]
+position = Vector2(79.1559, 20.8373)
+texture = SubResource("AtlasTexture_fahe5")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Potemkin"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Potemkin"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Potemkin/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Potemkin/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Ramlethal Valentine" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(1750, 356.667)
-script = ExtResource("3_kpoft")
+[node name="Ramlethal Valentine" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(457.623, 109.091)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Ramlethal Valentine"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Ramlethal Valentine"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Ramlethal Valentine"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Ramlethal Valentine/Polygon2D"]
-position = Vector2(76.6669, 30)
-texture = SubResource("AtlasTexture_an7ku")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Ramlethal Valentine/Polygon2D"]
+position = Vector2(83.2695, 44.6607)
+texture = SubResource("AtlasTexture_452bf")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Ramlethal Valentine"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Ramlethal Valentine"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Ramlethal Valentine/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Ramlethal Valentine/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Testament" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(2000, 356.667)
-script = ExtResource("3_kpoft")
+[node name="Sol Badguy" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(532.623, 109.091)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
+character_name = "Sol Badguy"
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Sol Badguy"]
+clip_children = 2
+polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Sol Badguy/Polygon2D"]
+position = Vector2(48.7066, 61.2552)
+texture = SubResource("AtlasTexture_614eh")
+
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Sol Badguy"]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Sol Badguy/Area2D"]
+polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
+
+[node name="Testament" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(607.623, 109.091)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Testament"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Testament"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Testament"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Testament/Polygon2D"]
-position = Vector2(61, 31)
-texture = SubResource("AtlasTexture_ligo8")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Testament/Polygon2D"]
+position = Vector2(56.5563, 46.2486)
+texture = SubResource("AtlasTexture_nyp8d")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Testament"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Testament"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Testament/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Testament/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
 
-[node name="Zato-1" type="Node2D" parent="CharacterPortraitContainer"]
-position = Vector2(2250, 356.667)
-script = ExtResource("3_kpoft")
+[node name="Zato-1" type="Node2D" parent="Node2D/CharacterPortraits"]
+position = Vector2(682.623, 109.091)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_5qh31")
 character_name = "Zato-1"
 
-[node name="Polygon2D" type="Polygon2D" parent="CharacterPortraitContainer/Zato-1"]
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/CharacterPortraits/Zato-1"]
 clip_children = 2
 polygon = PackedVector2Array(-100, 85, 125, 85, 200, -242, -25, -242)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterPortraitContainer/Zato-1/Polygon2D"]
-position = Vector2(87.6667, 31)
-texture = SubResource("AtlasTexture_bxjfw")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CharacterPortraits/Zato-1/Polygon2D"]
+position = Vector2(76.5518, 8.13167)
+texture = SubResource("AtlasTexture_4kfqn")
 
-[node name="Area2D" type="Area2D" parent="CharacterPortraitContainer/Zato-1"]
+[node name="Area2D" type="Area2D" parent="Node2D/CharacterPortraits/Zato-1"]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CharacterPortraitContainer/Zato-1/Area2D"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Node2D/CharacterPortraits/Zato-1/Area2D"]
 polygon = PackedVector2Array(-90, 75, 120, 75, 190, -232, -20, -232)
